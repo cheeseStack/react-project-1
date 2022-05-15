@@ -1,13 +1,15 @@
 // import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
 
 function App() {
-
-  let name = 'mario';
+  // name is the current default name; 
+  // setName is to set a function to set the name to a different one
+  const [name, setName] = useState('mario');
 
   const handelClick = () => {
-    name = 'luigi';
-    console.log(name);
+    setName('luigi')
+    console.log(name)
   }
 
   return (
