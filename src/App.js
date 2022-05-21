@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react'
+import Title from './components/Title'
 
 function App() {
   // //s.22: conditional Templates: show based on true or false
@@ -25,8 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* below: s22: https://netninja.dev/courses/1546635/lectures/35757442 
-      Button to show or hide the template below, showing the object ddata  */}
+      <Title />
       {showEvents && (
         <div>
           <button onClick ={() => setShowEvents(false)}>hide events</button>
