@@ -7,6 +7,7 @@ export default function Modal(props) {
     <div className='modal-backdrop'>
         <div className="modal">
             {props.children}
+            <button onClick={props.handleClose}>close</button>
         </div>
 
 

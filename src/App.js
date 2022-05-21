@@ -14,7 +14,10 @@ function App() {
     {title: "race on moo moo farm", id: 3}
   ])
 
-  console.log(showEvents);
+  // below: Modal useState 
+  const [showModal, setShowModal] = useState(true);
+
+  console.log(showModal);
 
   const handelClick = (id) => {
     setEvents ((previousEvents) => {
@@ -23,6 +26,11 @@ function App() {
       })
     })
     console.log(id);
+  }
+
+  // below: modal handleClose function
+  const handleClose = () => {
+    setShowModal(false)
   }
 
   const subtitle = "All the latest events in Marioland"
@@ -59,11 +67,11 @@ function App() {
       <p>Use the code NINJA10 at the checkout</p>
     </Modal> */}
 
-    <Modal> 
+    {showModal && <Modal handleClose={handleClose}> 
       <h2>Terms and Conditions</h2>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, eum. Incidunt necessitatibus saepe, nihil architecto quis labore corporis omnis alias expedita ipsam corrupti cupiditate, doloribus ex aliquid minima numquam! Eaque!</p>
       <a href="#">find out more . . .</a>
-    </Modal>
+    </Modal>}
 
     </div>
   );
