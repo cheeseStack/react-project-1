@@ -24,9 +24,13 @@ function App() {
     console.log(id);
   }
 
+  const subtitle = "All the latest events in Marioland"
+  const subtitle2 = "Another subtitle"
+
   return (
     <div className="App">
-      <Title />
+      <Title title="Events in Your Area" subtitle={subtitle}/>
+      <Title title="another title" subtitle={subtitle2}/>
       {showEvents && (
         <div>
           <button onClick ={() => setShowEvents(false)}>hide events</button>
