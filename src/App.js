@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Title from './components/Title'
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Title title="Events in Your Area" subtitle={subtitle}/>
-      <Title title="another title" subtitle={subtitle2}/>
+      {/* <Title title="another title" subtitle={subtitle2}/> */}
       {showEvents && (
         <div>
           <button onClick ={() => setShowEvents(false)}>hide events</button>
@@ -45,10 +45,10 @@ function App() {
 
       {/* use logical AND && to sow or hide the template, only showing the RHS of the code if the LHS is true */}
       {showEvents && events.map( (event, index) => (
-        <div key={event.id}>
+        <React.Fragment key={event.id}>
           <h2>{index + 1}: {event.title}</h2>
           <button onClick={() => handelClick(event.id)}>delete event</button>
-        </div>
+        </React.Fragment>
       ))}
     </div>
   );
