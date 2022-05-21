@@ -17,8 +17,8 @@
 
 button {
     display: block;
-    margin: 10px auto;
+    margin: 0 auto 35px auto;
     background: yellow;
-
     border-radius: 8px;
+
 }

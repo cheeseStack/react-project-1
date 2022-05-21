@@ -15,7 +15,7 @@ function App() {
   ])
 
   // below: Modal useState 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   console.log(showModal);
 
@@ -32,6 +32,11 @@ function App() {
   const handleClose = () => {
     setShowModal(false)
   }
+
+  // below: open the modal with a button:
+  // const handleOpen = () => {
+  //   setShowModal(true)
+  // } 
 
   const subtitle = "All the latest events in Marioland"
   const subtitle2 = "Another subtitle"
@@ -72,6 +77,10 @@ function App() {
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, eum. Incidunt necessitatibus saepe, nihil architecto quis labore corporis omnis alias expedita ipsam corrupti cupiditate, doloribus ex aliquid minima numquam! Eaque!</p>
       <a href="#">find out more . . .</a>
     </Modal>}
+
+    <div>
+      <button onClick={() => setShowModal(true)}>Show your special offer</button>
+    </div>
 
     </div>
   );
