@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState } from 'react'
 import Title from './components/Title'
 import Modal from './components/Modal'
+import EventList from './components/EventList';
 
 function App() {
   // //s.22: conditional Templates: show based on true or false
@@ -59,12 +60,7 @@ function App() {
       )}
 
       {/* use logical AND && to sow or hide the template, only showing the RHS of the code if the LHS is true */}
-      {showEvents && events.map( (event, index) => (
-        <React.Fragment key={event.id}>
-          <h2>{index + 1}: {event.title}</h2>
-          <button onClick={() => handelClick(event.id)}>delete event</button>
-        </React.Fragment>
-      ))}
+      {showEvents && <EventList events={events} handelClick={handelClick}/> }
 
     {/* Modal from part 28 goes below */}
     {/* <Modal> 
