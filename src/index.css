@@ -24,6 +24,7 @@ button {
   padding: 10px;
   border: 0;
   border-radius: 4px;
-  margin: 10px auto;
+  margin: 15px auto;
   cursor: pointer;
+  display: block
 }
