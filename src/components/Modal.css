@@ -1,4 +1,4 @@
-.modal-page .modal-backdrop {
+.modal-backdrop {
     position:fixed;
     top: 0;
     left: 0;
@@ -7,10 +7,23 @@
     background: rgba(0,0,0,0.5);
 }
 
-.modal-page .modal {
+.modal {
     padding: 30px;
     max-width: 480px;
     margin: 200px auto;
     background: white;
     border-radius: 10px;
 }
+
+.modal h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+
+.modal .sales-btn {
+    border: 4px solid #333;
+    font-size:18px;
+    text-transform: uppercase;
+}
+
