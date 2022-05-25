@@ -5,10 +5,12 @@ import React, { useState } from 'react'
 export default function NewEventForm({addEvent}) {
     const [title, setTitle] = useState('')
     const [date, setDate] = useState('')
+    const [location, setLocation] = useState('Manchester')
 
     const resetForm = () => {
         setTitle('')
         setDate('')
+        setLocation('Manchester')
     }
 
     const handleSubmit = (e) => {
@@ -17,8 +19,11 @@ export default function NewEventForm({addEvent}) {
         const event = {
             title: title,
             date: date,
+            location: location,
             id: Math.floor(Math.random()*10000) // this generates as random id between 1 and 10000
         }
+
+        console.log(event);
         addEvent(event);
         resetForm();
     }
@@ -48,6 +53,16 @@ export default function NewEventForm({addEvent}) {
             value={date}
             />
         </label>
+
+        <label>
+            <span>Event Location: </span>
+            <select onChange={(e) => setLocation(e.target.value) }>
+                <option value="Manchester">Manchester</option>
+                <option value="London">London</option>
+                <option value="Cardiff">Cardiff</option>
+            </select>
+        </label>
+
         <button>Submit</button>
     </form>
   )

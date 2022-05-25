@@ -7,6 +7,7 @@ export default function EventList({events, handelClick}) { // this destructures 
         {events.map( (event, index) => (
         <div className={styles.card} key={event.id}>
           <h2>{index + 1}: {event.title}</h2>
+          <p>{event.location} on {event.date} </p>
           <button onClick={() => handelClick(event.id)}>delete event</button>
         </div>
       ))}
