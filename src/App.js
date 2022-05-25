@@ -8,11 +8,15 @@ import NewEventForm from './components/NewEventForm'
 function App() {
   const [showModal, setShowModal] = useState(false)
   const [showEvents, setShowEvents] = useState(true)
-  const [events, setEvents] = useState([
-    {title: "mario's birthday bash", id: 1},
-    {title: "bowser's live stream", id: 2},
-    {title: "race on moo moo farm", id: 3}
-  ])
+  const [events, setEvents] = useState([]) // empty events state by default
+
+  // function to create the new events and save into the useState: https://netninja.dev/courses/1546635/lectures/35898759
+  const addEvent = (event) => {
+    setEvents((prevEvents) => {
+      return[...prevEvents, event]
+    })
+    setShowModal(false)
+  }
 
   const handleClick = (id) => {
     setEvents(prevEvents => {
@@ -20,11 +24,8 @@ function App() {
     })
   }
 
-  const handleClose = () => {
-    setShowModal(false)
-  }
 
-  const subtitle = "All the latest events in Marioland"
+  const subtitle = "All the latest events in Marioland";
 
   return (
     <div className="App">
@@ -43,8 +44,8 @@ function App() {
       {showEvents && <EventList events={events} handleClick={handleClick} />}
       
       {showModal && (
-        <Modal handleClose={handleClose} isSalesModal={true}>
-          <NewEventForm />
+        <Modal>
+          <NewEventForm addEvent={addEvent}/>
         </Modal>
       )}
 
